@@ -21,11 +21,11 @@ class about(commands.Cog):
 
     @app_commands.command(name="about", description="このbotについて")
     async def about(self, inter: discord.Integration):
-        embed = discord.Embed(title="このBOTについて", description="コードの書き直し中です", color=0x4169e1)
-        embed.add_field(name="作成者", value="Mumeinosato") 
-        embed.add_field(name="招待リンク", value="[ここをクリック](https://discord.com/api/oauth2/authorize?client_id=729668738877620255&permissions=8&scope=bot%20applications.commands)", inline=False) 
-        embed.add_field(name="サーバー数", value=f"{len(self.bot.guilds)}")
-        embed.add_field(name="メンバー数", value=f"{len(self.bot.users)}")
+        embed = discord.Embed(title="このBOTについて", description="what happened", color=0x4169e1)
+        embed.add_field(name="作成者", value="T.Y") 
+        ##embed.add_field(name="招待リンク", value="[ここをクリック](https://discord.com/api/oauth2/authorize?client_id=729668738877620255&permissions=8&scope=bot%20applications.commands)", inline=False) 
+        ##embed.add_field(name="サーバー数", value=f"{len(self.bot.guilds)}")
+        ##embed.add_field(name="メンバー数", value=f"{len(self.bot.users)}")
         await inter.response.send_message(embed=embed)
 
 async def setup(bot):

@@ -77,7 +77,29 @@ class chat(commands.Cog):
             except(KeyboardInterrupt, EOFError, SystemExit):
                 return
         
-        if id == "":
+
+        snedok = false
+
+        ch_path = os.path.abspath("cogs/json/channel.json")
+        if os.path.exists(ch_path):
+            with open(ch_path, "r") as file:
+                try:
+                    ch_data = json.load(file)
+                except json.JSONDecodeError:
+                    print("ファイルの形式が正しくありません")
+                    return
+
+        if id in ch_data:
+            try:
+                sendok = true
+            except(KeyboardInterrupt, EOFError, SystemExit):
+                return                
+
+        #チャンネル処理
+        if sendok == true:
+            sendch = self.get_channel()
+            await sendch.send(text)
+
             
 
         ##if message.channel.name == GLOBAL_CH_NAME:
