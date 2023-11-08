@@ -32,7 +32,8 @@ class Mumeinosato(commands.Bot):
         except Exception:
             traceback.print_exc()
         await self.tree.sync() # Slash command automatic sync
-        await self.change_presence(activity=discord.Game(f"導入サーバー数: {len(bot.guilds)} | ユーザー数: {len(bot.users)}"))
+        ##await self.change_presence(activity=discord.Game(f"導入サーバー数: {len(bot.guilds)} | ユーザー数: {len(bot.users)}"))
+        await self.change_presence(activity=discord.Game())
         ##await bot.get_channel(1058005805426814976).send(embed=discord.Embed(title="Startup Program finished!", description=f"Logging in {self.user.name}\nStart time: {discord.utils.format_dt(self.start_time)}"))
         print(f"Startup Program finished!\nLogging in {self.user.name}")
 
