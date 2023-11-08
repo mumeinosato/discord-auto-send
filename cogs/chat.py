@@ -60,6 +60,7 @@ class chat(commands.Cog):
         if message.author.bot:
             return
         id = message.channel.id
+        text = message.content
         file_path = os.path.abspath("cogs/json/chat.json")
         if os.path.exists(file_path):
             with open(file_path, "r") as file:
@@ -70,12 +71,15 @@ class chat(commands.Cog):
                     return
         if id in data:
             try:
-                text = message.content
+                ##text = message.content
                 response = self.chatbot.get_response(text)  # 修正箇所
                 await message.channel.send('{}'.format(response))
             except(KeyboardInterrupt, EOFError, SystemExit):
                 return
         
+        if id == "":
+            
+
         ##if message.channel.name == GLOBAL_CH_NAME:
         ##    await message.delete()
         ##    channels = self.bot.get_all_chanels()

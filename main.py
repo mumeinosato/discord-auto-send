@@ -25,6 +25,7 @@ class Mumeinosato(commands.Bot):
                     print(f"Loaded cogs: cogs.{file[:-3]}")
                 except Exception as e:
                     print(f"cogs.{file[:-3]} failed to load", e)
+                    
                     traceback.print_exc()
         try:
             ##await self.load_extension("jishaku") # Load jishaku
