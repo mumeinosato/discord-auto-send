@@ -92,12 +92,13 @@ class chat(commands.Cog):
         if id in ch_data:
             try:
                 sendok = true
+                chresult = json_data[id]["to"]
             except(KeyboardInterrupt, EOFError, SystemExit):
                 return                
 
         #チャンネル処理
         if sendok == true:
-            sendch = self.get_channel()
+            sendch = self.get_channel(chresul)
             await sendch.send(text)
 
             
