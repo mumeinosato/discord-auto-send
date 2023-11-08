@@ -13,7 +13,7 @@ token = os.getenv("token")
 class Mumeinosato(commands.Bot):
     def __init__(self):
         super().__init__(
-            command_prefix="mu:",
+            command_prefix="yt:",
             intents=discord.Intents.all()
         )
 
