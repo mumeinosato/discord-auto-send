@@ -1,0 +1,10 @@
+discord.py
+dislash.py
+translate
+pipe
+tokenizer
+googletrans
+python-dotenv
+mecab-python3
+pytz
+spacy
