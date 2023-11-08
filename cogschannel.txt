@@ -1,0 +1,22 @@
+import json
+
+# 入力となるJSONデータ
+json_data = {
+    "222": {
+        "to": "0000"
+    },
+    "333": {
+        "to": "9999"
+    }
+}
+
+# 検索対象のキー
+search_key = "222"
+
+# キーが存在するか確認し、存在する場合は対応する値を取得
+if search_key in json_data:
+    result = json_data[search_key]["to"]
+    print("結果:", result)
+else:
+    print(f"キー {search_key} は存在しません。")
+
