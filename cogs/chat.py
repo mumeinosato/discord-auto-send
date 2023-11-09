@@ -78,7 +78,10 @@ class chat(commands.Cog):
                 return
         
 
-        snedok = false
+        if isinstance(message.channel, dicord.DMChannel):
+            user = self.get_user("userid")
+            await user.send(text)    
+            return
 
         ch_path = os.path.abspath("cogs/json/channel.json")
         if os.path.exists(ch_path):
@@ -91,16 +94,11 @@ class chat(commands.Cog):
 
         if id in ch_data:
             try:
-                sendok = true
                 chresult = json_data[id]["to"]
+                sendch = self.get_channel(chresul)
+                await sendch.send(text)
             except(KeyboardInterrupt, EOFError, SystemExit):
                 return                
-
-        #チャンネル処理
-        if sendok == true:
-            sendch = self.get_channel(chresul)
-            await sendch.send(text)
-
             
 
         ##if message.channel.name == GLOBAL_CH_NAME:
