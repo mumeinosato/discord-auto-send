@@ -77,7 +77,7 @@ class chat(commands.Cog):
                 return
         
 
-        if isinstance(message.channel, dicord.DMChannel):
+        if isinstance(message.channel, discord.DMChannel):
             user = self.get_user("userid")
             await user.send(text)    
             return
